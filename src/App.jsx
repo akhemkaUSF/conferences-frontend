@@ -8,6 +8,7 @@ import IndexPage from "./pages/Indexpage"
 import LoginPage from "./pages/LoginPage";
 import Layout from "./pages/Layout";
 import RegisterPage from "./pages/RegisterPage";
+import AccountPage from "./pages/AccountPage";
 import axios from "axios";
 import {UserContextProvider} from "./UserContext";
 
