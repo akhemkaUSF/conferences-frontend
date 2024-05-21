@@ -10,7 +10,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import PlacesPage from "./pages/PlacesPage";
 import PlacesFormPage from "./pages/PlacesFormPage";
 
-axios.defaults.baseURL = "https://www.usfmunon.top/";
+axios.defaults.baseURL = "https://www.usfmunon.top";
 axios.defaults.withCredentials = true;
 
 function App() {
