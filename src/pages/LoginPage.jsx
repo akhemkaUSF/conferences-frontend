@@ -1,5 +1,5 @@
 import {Link, Navigate} from 'react-router-dom';
-import {useContext, useState} from "react";
+import {useContext, useState, useEffect} from "react";
 import axios from "axios";
 import {UserContext} from "../UserContext";
 
@@ -7,13 +7,14 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const [alreadyLogged, setAlreadyLogged] = useState(false);
   const {user, setUser} = useContext(UserContext);
   //function runs when we click on the login button
 
   useEffect(() => {
     console.log(user);
     if (user) {
-      setRedirect(true);
+      setAlreadyLogged(true);
     }
   }, []);
 
@@ -34,6 +35,10 @@ export default function LoginPage() {
   }
 
   //we go to the index page if login is successful 
+
+  if (alreadyLogged) {
+    return <Navigate to ={'/account'}/>
+  }
   if (redirect) {
     return <Navigate to={'/'} />
   }
