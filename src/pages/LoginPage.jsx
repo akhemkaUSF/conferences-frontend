@@ -12,11 +12,8 @@ export default function LoginPage() {
   //function runs when we click on the login button
 
   useEffect(() => {
-    console.log(user);
-    if (user) {
-      setAlreadyLogged(true);
-    }
-  }, []);
+    setAlreadyLogged(true);
+  }, [user]);
 
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
