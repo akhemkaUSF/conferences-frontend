@@ -102,14 +102,14 @@ export default function PlacesFormPage() {
         {preInput('Photos','more = better')}
         <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
         {preInput('Description','description of the place')}
-        <textarea value={description} onChange={ev => setDescription(ev.target.value)} placeholder="description, for example: a lovely abode set in a triumphant location" />
+        <input type = "text" value={description} onChange={ev => setDescription(ev.target.value)} placeholder="description, for example: a lovely abode set in a triumphant location" />
         {preInput('Perks','select all the perks of your place')}
         <div className="grid mt-2 gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {/*we store the Perks form as a separate element, and import it here*/}
           <Perks selected={perks} onChange={setPerks} />
         </div>
         {preInput('Extra info','house rules, etc')}
-        <textarea value={extraInfo} onChange={ev => setExtraInfo(ev.target.value)} />
+        <input type = "text" value={extraInfo} onChange={ev => setExtraInfo(ev.target.value)} />
         {preInput('Check in&out times','add check in and out times, remember to have some time window for cleaning the room between guests')}
         <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
           <div>
