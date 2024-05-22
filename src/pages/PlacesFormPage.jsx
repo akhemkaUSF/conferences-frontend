@@ -19,9 +19,11 @@ export default function PlacesFormPage() {
   const [price,setPrice] = useState(100);
   const [redirect,setRedirect] = useState(false);
   useEffect(() => {
+    //don't do anything if the ID isn't there
     if (!id) {
       return;
     }
+    //gets all the values for the place based on the axios request
     axios.get('/places/'+id).then(response => {
        const {data} = response;
        setTitle(data.title);
@@ -55,6 +57,7 @@ export default function PlacesFormPage() {
     );
   }
 
+  //activated when we submit the places form
   async function savePlace(ev) {
     ev.preventDefault();
     const placeData = {
@@ -62,8 +65,11 @@ export default function PlacesFormPage() {
       description, perks, extraInfo,
       checkIn, checkOut, maxGuests, price,
     };
+    
     if (id) {
       // update
+      /*The ... spread operator in this code snippet is 
+        used to merge the id property with all properties of the placeData object into a single object*/
       await axios.put('/places', {
         id, ...placeData
       });
@@ -76,24 +82,30 @@ export default function PlacesFormPage() {
 
   }
 
+  //after the form is submitted, we go to our places page --> features the places we own
   if (redirect) {
     return <Navigate to={'/account/places'} />
   }
 
+  //
   return (
     <div>
       <AccountNav />
       <form onSubmit={savePlace}>
+        {/*preInput goes before the form itself*/}
         {preInput('Title', 'Title for your place. should be short and catchy as in advertisement')}
+        {/*value is preset to the title or the placeholder, in case there is no title*/}
+        {/*title variable changes when we edit the value in the input form*/}
         <input type="text" value={title} onChange={ev => setTitle(ev.target.value)} placeholder="title, for example: My lovely apt"/>
         {preInput('Address', 'Address to this place')}
         <input type="text" value={address} onChange={ev => setAddress(ev.target.value)}placeholder="address"/>
         {preInput('Photos','more = better')}
         <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
         {preInput('Description','description of the place')}
-        <textarea value={description} onChange={ev => setDescription(ev.target.value)} />
+        <textarea value={description} onChange={ev => setDescription(ev.target.value)} placeholder="description, for example: a lovely abode set in a triumphant location" />
         {preInput('Perks','select all the perks of your place')}
         <div className="grid mt-2 gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+            {/*we store the Perks form as a separate element, and import it here*/}
           <Perks selected={perks} onChange={setPerks} />
         </div>
         {preInput('Extra info','house rules, etc')}
