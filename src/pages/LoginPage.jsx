@@ -13,6 +13,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     setAlreadyLogged(true);
+    console.log(user);
   }, [user]);
 
   async function handleLoginSubmit(ev) {
