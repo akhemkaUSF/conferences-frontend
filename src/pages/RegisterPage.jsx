@@ -3,22 +3,30 @@ import {useState} from "react";
 import axios from "axios";
 
 export default function RegisterPage() {
+  //all the variables start out blank
     const [name, setName] = useState('');
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+
+    //triggered when we press the register button
     async function registerUser(ev) {
+      //allows us to handle form submission through javascript
         ev.preventDefault();
         console.log(axios.get('/test'));
-        await axios.post('/register', {
-            name, 
-            email, 
-            password,
-        })
-        .catch(function (error) {
+        try {
+          await axios.post('/register', {
+              name, 
+              email, 
+              password,
+          });
+          alert('registration complete');
+        } 
+      catch(error) {
             console.log(error.config);
-        });
-        alert('registration complete');
+            alert('registration failed');
+        };
+        
     }
     return (
         <div className="mt-4 grow flex items-center justify-around">
