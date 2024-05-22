@@ -35,15 +35,15 @@ export default function ProfilePage() {
   return (
     <div>
       <AccountNav />
-      {/*{subpage === 'profile' && (*/}
+      {subpage === 'profile' && (
         <div className="text-center max-w-lg mx-auto">
           Logged in as {user.name} ({user.email})<br />
           <button onClick={logout} className="primary max-w-sm mt-2">Logout</button>
         </div>
-      {/*)*/}
-      {/*{subpage === 'places' && (
+      )}
+      {subpage === 'places' && (
         <PlacesPage />
-      )}*/}
+      )}
     </div>
   );
 }
