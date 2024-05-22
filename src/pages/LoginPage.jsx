@@ -11,10 +11,10 @@ export default function LoginPage() {
   const {user, setUser} = useContext(UserContext);
   //function runs when we click on the login button
 
-  useEffect(() => {
+  /*useEffect(() => {
     setAlreadyLogged(true);
     console.log(user);
-  }, [user]);
+  }, [user]);*/
 
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
