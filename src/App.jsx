@@ -14,7 +14,7 @@ import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 
-axios.defaults.baseURL = "https://www.usfmunon.top";
+axios.defaults.baseURL = "https://www.backend.usfmunon.top";
 axios.defaults.withCredentials = true;
 
 //self-explanatory
