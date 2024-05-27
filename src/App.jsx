@@ -7,10 +7,10 @@ import RegisterPage from "./pages/RegisterPage";
 import axios from "axios";
 import {UserContextProvider} from "./UserContext";
 import ProfilePage from "./pages/ProfilePage.jsx";
-import ConferencesPage from "./pages/PlacesPage";
-import ConferencesFormPage from "./pages/PlacesFormPage";
+import ConferencesPage from "./pages/ConferencesPage";
+import ConferencesFormPage from "./pages/ConferencesFormPage";
 
-import ConferencePage from "./pages/PlacePage";
+import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 
