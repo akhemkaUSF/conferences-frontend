@@ -2,6 +2,7 @@ import axios from "axios";
 import {useState} from "react";
 import Image from "./Image.jsx";
 
+//come back to this one
 export default function PhotosUploader({addedPhotos,onChange}) {
   const [photoLink,setPhotoLink] = useState('');
   async function addPhotoByLink(ev) {

@@ -1,8 +1,11 @@
 export default function Perks({selected,onChange}) {
+    //triggered when we check the textbook
     function handleCbClick(ev) {
       const {checked,name} = ev.target;
+      //adds the checked item to the perks array
       if (checked) {
         onChange([...selected,name]);
+    //removes the check item from the perked array
       } else {
         onChange([...selected.filter(selectedName => selectedName !== name)]);
       }

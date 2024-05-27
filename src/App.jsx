@@ -7,15 +7,17 @@ import RegisterPage from "./pages/RegisterPage";
 import axios from "axios";
 import {UserContextProvider} from "./UserContext";
 import ProfilePage from "./pages/ProfilePage.jsx";
-import PlacesPage from "./pages/PlacesPage";
-import PlacesFormPage from "./pages/PlacesFormPage";
+import ConferencesPage from "./pages/PlacesPage";
+import ConferencesFormPage from "./pages/PlacesFormPage";
 
-import PlacePage from "./pages/PlacePage";
-import BookingsPage from "./pages/BookingsPage";
-import BookingPage from "./pages/BookingPage";
+import ConferencePage from "./pages/PlacePage";
+import SignupsPage from "./pages/SignupsPage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
 
 axios.defaults.baseURL = "https://www.usfmunon.top";
 axios.defaults.withCredentials = true;
+
+//self-explanatory
 
 function App() {
   return (
@@ -26,12 +28,12 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/account" element={<ProfilePage />} />
-          <Route path="/account/places" element={<PlacesPage />} />
-          <Route path="/account/places/new" element={<PlacesFormPage />} />
-          <Route path="/account/places/:id" element={<PlacesFormPage />} />
-          <Route path="/place/:id" element={<PlacePage />} />
-          <Route path="/account/bookings" element={<BookingsPage />} />
-          <Route path="/account/bookings/:id" element={<BookingPage />} />
+          <Route path="/account/conferences" element={<ConferencesPage />} />
+          <Route path="/account/conferences/new" element={<ConferencesFormPage />} />
+          <Route path="/account/conferences/:id" element={<ConferencesFormPage />} />
+          <Route path="/conference/:id" element={<ConferencePage />} />
+          <Route path="/account/signups" element={<SignupsPage />} />
+          <Route path="/account/signups/:id" element={<SignupPage />} />
         </Route>
       </Routes>
     </UserContextProvider>
