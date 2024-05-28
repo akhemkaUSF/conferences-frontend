@@ -17,6 +17,7 @@ export default function ConferencesFormPage() {
   const [delegateFeeRefund, setDelegateFeeRefund] = useState('');
   const [hotelRefund, setHotelRefund] = useState('');
   const [redirect,setRedirect] = useState(false);
+  const [signups, setSignups] = useState([]);
   useEffect(() => {
     //don't do anything if the ID isn't there
     if (!id) {
@@ -35,6 +36,8 @@ export default function ConferencesFormPage() {
        setTransportationCost(data.transportationCost);
        setDelegateFeeRefund(data.delegateFeeRefund);
        setHotelRefund(data.hotelRefund);
+       setSignups(data.signups);
+
     });
   }, [id]);
   function inputHeader(text) {
@@ -60,7 +63,7 @@ export default function ConferencesFormPage() {
   async function saveConference(ev) {
     ev.preventDefault();
     const conferenceData = {
-      name, city, delegateFee, delegationFee, hotelCost, transportationCost, startDate, endDate, delegateFeeRefund, hotelRefund,
+      name, signups, city, delegateFee, delegationFee, hotelCost, transportationCost, startDate, endDate, delegateFeeRefund, hotelRefund,
     };
     
     if (id) {
