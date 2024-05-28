@@ -14,8 +14,8 @@ export default function ConferencesFormPage() {
   const [delegationFee, setDelegationFee] = useState(0);
   const [hotelCost, setHotelCost] = useState(0);
   const [transportationCost, setTransportationCost] = useState(0);
-  const [delegateFeeRefund, setDelegateFeeRefund] = useState(new Date());
-  const [hotelRefund, setHotelRefund] = useState(new Date());
+  const [delegateFeeRefund, setDelegateFeeRefund] = useState('');
+  const [hotelRefund, setHotelRefund] = useState('');
   const [redirect,setRedirect] = useState(false);
   useEffect(() => {
     //don't do anything if the ID isn't there
@@ -100,15 +100,15 @@ export default function ConferencesFormPage() {
         <div className="grid gap-2 grid-cols-2 md:grid-cols-2">
           <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
-            <input type="date"
-                   value={format(startDate, 'YYYY-MM-DD')}
+            <input type="text"
+                   value={startDate}
                    onChange={ev => setStartDate(ev.target.value)}
             />
           </div>
           <div>
             <h3 className="mt-2 -mb-1">End date</h3>
-            <input type="date"
-                   value={format(endDate, 'YYYY-MM-DD')}
+            <input type="text"
+                   value={endDate}
                    onChange={ev => setEndDate(ev.target.value)}
             />
           </div>
@@ -140,12 +140,12 @@ export default function ConferencesFormPage() {
         <div className="grid gap-2 grid-cols-2 md:grid-cols-2">
           <div>
             <h3 className="mt-2 -mb-1">Delegate Fee Refund</h3>
-            <input type="date" value={format(delegateFeeRefund, 'YYYY-MM-DD')}
+            <input type="text" value={delegateFeeRefund}
                   onChange={ev => setDelegateFeeRefund(ev.target.value)}/>
           </div>
           <div>
             <h3 className="mt-2 -mb-1">Hotel Fee Refund</h3>
-            <input type="date" value={format(hotelRefund, 'YYYY-MM-DD')}
+            <input type="text" value={hotelRefund}
                   onChange={ev => setHotelRefund(ev.target.value)}/>
           </div>
         </div>
