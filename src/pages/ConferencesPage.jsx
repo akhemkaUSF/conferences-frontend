@@ -3,6 +3,8 @@ import AccountNav from "../AccountNav";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import PlaceImg from "../PlaceImg";
+
+
 export default function ConferencesPage() {
   const [conferences,setConferences] = useState([]);
   useEffect(() => {

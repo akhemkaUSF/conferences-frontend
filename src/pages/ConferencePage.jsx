@@ -5,6 +5,7 @@ import BookingWidget from "../BookingWidget";
 import PlaceGallery from "../PlaceGallery";
 import AddressLink from "../AddressLink";
 
+
 export default function ConferencePage() {
   //sets the ID using the params passed in App.jsx  
   const {id} = useParams();

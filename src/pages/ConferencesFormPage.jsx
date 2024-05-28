@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import AccountNav from "../AccountNav.jsx";
 import {Navigate, useParams} from "react-router-dom";
+import { format } from 'date-fns'
 
 export default function ConferencesFormPage() {
   const {id} = useParams();
@@ -100,14 +101,14 @@ export default function ConferencesFormPage() {
           <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
             <input type="date"
-                   value={startDate}
+                   value={format(startDate, 'yyyy-mm-dd')}
                    onChange={ev => setStartDate(ev.target.value)}
             />
           </div>
           <div>
             <h3 className="mt-2 -mb-1">End date</h3>
             <input type="date"
-                   value={endDate}
+                   value={format(endDate, 'yyyy-mm-dd')}
                    onChange={ev => setEndDate(ev.target.value)}
             />
           </div>
