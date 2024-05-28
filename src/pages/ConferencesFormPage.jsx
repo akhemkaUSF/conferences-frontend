@@ -14,8 +14,8 @@ export default function ConferencesFormPage() {
   const [delegationFee, setDelegationFee] = useState(0);
   const [hotelCost, setHotelCost] = useState(0);
   const [transportationCost, setTransportationCost] = useState(0);
-  const [delegateFeeRefund, setDelegateFeeRefund] = useState('');
-  const [hotelRefund, setHotelRefund] = useState('');
+  const [delegateFeeRefund, setDelegateFeeRefund] = useState(new Date());
+  const [hotelRefund, setHotelRefund] = useState(new Date());
   const [redirect,setRedirect] = useState(false);
   useEffect(() => {
     //don't do anything if the ID isn't there
@@ -140,12 +140,12 @@ export default function ConferencesFormPage() {
         <div className="grid gap-2 grid-cols-2 md:grid-cols-2">
           <div>
             <h3 className="mt-2 -mb-1">Delegate Fee Refund</h3>
-            <input type="date" value={delegateFeeRefund}
+            <input type="date" value={format(delegateFeeRefund, 'YYYY-MM-DD')}
                   onChange={ev => setDelegateFeeRefund(ev.target.value)}/>
           </div>
           <div>
             <h3 className="mt-2 -mb-1">Hotel Fee Refund</h3>
-            <input type="date" value={hotelRefund}
+            <input type="date" value={format(hotelRefund, 'YYYY-MM-DD')}
                   onChange={ev => setHotelRefund(ev.target.value)}/>
           </div>
         </div>
