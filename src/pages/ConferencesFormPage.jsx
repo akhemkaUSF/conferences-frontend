@@ -101,14 +101,14 @@ export default function ConferencesFormPage() {
           <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
             <input type="date"
-                   value={format(startDate, 'yyyy-mm-dd')}
+                   value={format(startDate, 'YYYY-MM-DD')}
                    onChange={ev => setStartDate(ev.target.value)}
             />
           </div>
           <div>
             <h3 className="mt-2 -mb-1">End date</h3>
             <input type="date"
-                   value={format(endDate, 'yyyy-mm-dd')}
+                   value={format(endDate, 'YYYY-MM-DD')}
                    onChange={ev => setEndDate(ev.target.value)}
             />
           </div>
