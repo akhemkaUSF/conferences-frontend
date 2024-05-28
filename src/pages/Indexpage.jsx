@@ -22,14 +22,11 @@ export default function IndexPage() {
             {/*displays the first photo in the conferences array of photos
             Question mark ensures that if photos does not exist or is null or undefined, the code does not throw an error 
             */}
-            {conference.photos?.[0] && (
-              <Image className="rounded-2xl object-cover aspect-square" src={conference.photos?.[0]} alt=""/>
-            )}
           </div>
-          <h2 className="font-bold">{conference.address}</h2>
-          <h3 className="text-sm text-gray-500">{conference.title}</h3>
+          <h2 className="font-bold">{conference.city}</h2>
+          <h3 className="text-sm text-gray-500">{conference.name}</h3>
           <div className="mt-1">
-            <span className="font-bold">${conference.price}</span> per night
+            <span className="font-bold">${conference.delegateFee}</span> Delegate Fee
           </div>
           {/*the structure of the conference entry is such that wherever we click inside the box, it'll take us to the specific conference page*/}
         </Link>
