@@ -81,6 +81,7 @@ export default function ConferencesFormPage() {
 
   //after the form is submitted, we go to our places page --> features the places we own
   if (redirect) {
+    console.log("do we get here");
     return <Navigate to={'/account/conferences'} />
   }
 
