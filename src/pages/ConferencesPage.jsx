@@ -7,7 +7,7 @@ export default function ConferencesPage() {
   const [conferences,setConferences] = useState([]);
   useEffect(() => {
     axios.get('/conferences').then(({data}) => {
-      setConferences(conferences);
+      setConferences(data);
     });
   }, []);
   return (
