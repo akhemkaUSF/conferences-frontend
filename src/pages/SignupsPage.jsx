@@ -15,7 +15,7 @@ export default function SignupsPage() {
   }, []);
 
   function getConference(string=null) {
-    axios.get('/conferences/' + string).then(response => {
+    axios.get(`/conferences/${string}`).then(response => {
       setConference(response.data);
     });
     console.log(conference);
