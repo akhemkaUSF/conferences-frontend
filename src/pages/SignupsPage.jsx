@@ -12,6 +12,11 @@ export default function SignupsPage() {
       setSignups(response.data);
     });
   }, []);
+
+  function getConference(string=null) {
+    const data = axios.get('/conferences/' + string);
+    return data.name;
+  }
   return (
     <div>
         {/*puts the Account Navigation header at the top*/}
@@ -23,7 +28,7 @@ export default function SignupsPage() {
             //${} is used to designate the parameter I guess
           <Link to={`/account/signups/${signup._id}`} className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden">
             <div className="py-3 pr-3 grow">
-              <h2 className="text-xl">{signup.conference.name}</h2>
+              <h2 className="text-xl">{getConference(signup.conference)}</h2>
               <div className="text-xl">
                 <div className="flex gap-1">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
