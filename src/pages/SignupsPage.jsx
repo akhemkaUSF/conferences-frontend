@@ -14,7 +14,7 @@ export default function SignupsPage() {
   }, []);
 
   function getConference(string=null) {
-    const data = axios.get('/conferences/' + string);
+    const {data} = axios.get('/conferences/' + string);
     console.log(data);
     console.log(data.name);
     return data.name;
