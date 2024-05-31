@@ -5,7 +5,7 @@ import {Navigate, useParams} from "react-router-dom";
 import { format } from 'date-fns'
 import {UserContext} from "../UserContext.jsx";
 
-export default function SignupsFormPage({conference}) {
+export default function SignupsFormPage() {
   const {conferenceID} = useParams();
   const [conference, setConference] = useState(null);
   const [committeePreferences, setCommitteePreferences] = useState('');

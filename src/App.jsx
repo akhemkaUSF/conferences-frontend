@@ -9,7 +9,7 @@ import {UserContextProvider} from "./UserContext";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import ConferencesPage from "./pages/ConferencesPage";
 import ConferencesFormPage from "./pages/ConferencesFormPage";
-import SignupsFormPage from "./pages/SignupsFormPage";
+import SignupsFormPage from "./pages/SignupsFormPage.jsx";
 
 import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
