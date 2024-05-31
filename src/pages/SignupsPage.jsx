@@ -19,8 +19,8 @@ export default function SignupsPage() {
       setConference(response.data);
     });
     console.log(conference);
-    console.log(conference.name);
-    return "";
+    //console.log(conference.name);
+    return conference;
     //return conference.name;
   }
   return (
@@ -34,7 +34,7 @@ export default function SignupsPage() {
             //${} is used to designate the parameter I guess
           <Link to={`/account/signups/${signup._id}`} className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden">
             <div className="py-3 pr-3 grow">
-              <h2 className="text-xl">{getConference(signup.conference)}</h2>
+              <h2 className="text-xl">{(getConference(signup.conference).name)}</h2>
               <div className="text-xl">
                 <div className="flex gap-1">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
