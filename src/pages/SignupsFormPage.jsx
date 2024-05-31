@@ -51,7 +51,9 @@ export default function SignupsFormPage() {
     const signupData = {
       canDrive, passengers, additionalInfo, committeePreferences,
     };
-    await axios.post('/signups', conference, ...signupData);
+    await axios.post('/signups', {
+      conference, ...signupData
+    });
     setRedirect(true);
     }
 
