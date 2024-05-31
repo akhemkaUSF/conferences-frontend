@@ -35,7 +35,7 @@ function App() {
           <Route path="/conference/:id" element={<ConferencePage />} />
           <Route path="/account/signups" element={<SignupsPage />} />
           <Route path="/account/signups/:id" element={<SignupPage />} />
-          <Routh path ="/account/signups/:conferenceID" element={<SignupsFormPage />} />
+          <Route path ="/account/signups/:conferenceID" element={<SignupsFormPage />} />
         </Route>
       </Routes>
     </UserContextProvider>
