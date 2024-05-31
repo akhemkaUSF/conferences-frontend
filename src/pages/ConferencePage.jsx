@@ -1,6 +1,7 @@
 import {Link, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {UseContext} from "../UserContext.jsx";
 import BookingWidget from "../BookingWidget";
 import PlaceGallery from "../PlaceGallery";
 import AddressLink from "../AddressLink";

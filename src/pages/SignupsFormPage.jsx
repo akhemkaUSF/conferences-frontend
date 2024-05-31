@@ -13,6 +13,7 @@ export default function SignupsFormPage() {
   const [passengers, setPassengers] = useState(0);
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const {user} = useContext(UserContext);
 
   useEffect(() => {
     //don't do anything if the ID isn't there
@@ -47,6 +48,12 @@ export default function SignupsFormPage() {
 
   //activated when we submit the places form
   async function saveSignup(ev) {
+    const data = await axios.get('/profile');
+    if (data==null) {
+      alert('please log in first');
+      return;
+    }
+    }
     ev.preventDefault();
     const signupData = {
       canDrive, passengers, additionalInfo, committeePreferences,
