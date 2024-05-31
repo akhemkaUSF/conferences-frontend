@@ -48,6 +48,7 @@ export default function SignupsFormPage() {
   //activated when we submit the places form
   async function saveSignup(ev) {
     const data = await axios.get('/profile');
+    console.log(data);
     if (data==null) {
       alert('please log in first');
       return;
