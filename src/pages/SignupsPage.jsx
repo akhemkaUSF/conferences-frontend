@@ -6,6 +6,7 @@ import BookingDates from "../BookingDates";
 
 export default function SignupsPage() {
   const [signups,setSignups] = useState([]);
+  const [conference, setConference] = useState(null);
   useEffect(() => {
     //returns all the bookings for the user in question
     axios.get('/signups').then(response => {
@@ -14,10 +15,12 @@ export default function SignupsPage() {
   }, []);
 
   function getConference(string=null) {
-    const {data} = axios.get('/conferences/' + string);
-    console.log(data);
-    console.log(data.name);
-    return data.name;
+    axios.get('/conferences/' + string).then(response => {
+      setConference(response.data);
+    });
+    console.log(conference);
+    console.log(conference.name);
+    return conference.name;
   }
   return (
     <div>
