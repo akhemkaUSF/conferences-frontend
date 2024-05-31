@@ -53,7 +53,6 @@ export default function SignupsFormPage() {
       alert('please log in first');
       return;
     }
-    }
     ev.preventDefault();
     const signupData = {
       canDrive, passengers, additionalInfo, committeePreferences,
