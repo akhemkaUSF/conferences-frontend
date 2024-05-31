@@ -19,7 +19,7 @@ export default function SignupsPage() {
       setConference(response.data);
     });
     console.log(conference);
-    //console.log(conference.name);
+    console.log(conference.name);
     return "";
     //return conference.name;
   }
