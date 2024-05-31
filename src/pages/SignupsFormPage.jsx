@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import axios from "axios";
 import AccountNav from "../AccountNav.jsx";
 import {Navigate, useParams} from "react-router-dom";
@@ -13,6 +13,7 @@ export default function SignupsFormPage() {
   const [passengers, setPassengers] = useState(0);
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const {user} = useContext(UserContext);
 
   useEffect(() => {
     //don't do anything if the ID isn't there
@@ -47,10 +48,7 @@ export default function SignupsFormPage() {
 
   //activated when we submit the places form
   async function saveSignup(ev) {
-    console.log("does this get printing");
-    const data = await axios.get('/profile');
-    console.log("what is happening here" + data);
-    if (data==null) {
+    if (!user) {
       alert('please log in first');
       return;
     }
@@ -62,7 +60,7 @@ export default function SignupsFormPage() {
       conferenceID, ...signupData
     });
     setRedirect(true);
-    }
+  }
 
   //after the form is submitted, we go to our places page --> features the places we own
   if (redirect) {
