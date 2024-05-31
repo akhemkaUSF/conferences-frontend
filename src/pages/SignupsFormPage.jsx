@@ -68,14 +68,14 @@ export default function SignupsFormPage() {
         {/*preInput goes before the form itself*/}
         {preInput('Select your committee preferences', '')}
         <div onChange={event => setCommitteePreferences(event.target.value)}>
-        <input type="radio" value="GA" name="committeePreferences"/> General Assembly
-        <input type="radio" value="Specialized" name="committeePreferences"/> Specialized
-        <input type="radio" value="Crisis" name="committeePreferences"/> Specialized
+        <input type="radio" value="GA" /> General Assembly
+        <input type="radio" value="Specialized"/> Specialized
+        <input type="radio" value="Crisis"/> Crisis
       </div>
       {preInput('Can you drive to the conference?', '')}
         <div onChange={event => setCanDrive("true"==event.target.value)}>
-        <input type="radio" value="true" name="committeePreferences"/> Yes
-        <input type="radio" value="false" name="committeePreferences"/> No
+        <input type="radio" value="true"/> Yes
+        <input type="radio" value="false"/> No
       </div>
         {preInput('If you selected yes, how many passengers can you bring?', '')}
         <input type="number" value={passengers} onChange={ev => setPassengers(ev.target.value)}/>
