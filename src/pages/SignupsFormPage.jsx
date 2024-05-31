@@ -15,6 +15,7 @@ export default function SignupsFormPage() {
 
   useEffect(() => {
     //don't do anything if the ID isn't there
+    console.log("is this triggered at all?");
     if (!conferenceID) {
       return;
     }
