@@ -9,6 +9,7 @@ import {UserContextProvider} from "./UserContext";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import ConferencesPage from "./pages/ConferencesPage";
 import ConferencesFormPage from "./pages/ConferencesFormPage";
+import SignupsFormPage from "./pages/SignupsFormPage";
 
 import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/conference/:id" element={<ConferencePage />} />
           <Route path="/account/signups" element={<SignupsPage />} />
           <Route path="/account/signups/:id" element={<SignupPage />} />
+          <Routh path ="/account/signups/:conferenceID" element={<SignupsFormPage />} />
         </Route>
       </Routes>
     </UserContextProvider>
