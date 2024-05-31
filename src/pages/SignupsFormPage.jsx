@@ -47,6 +47,7 @@ export default function SignupsFormPage() {
 
   //activated when we submit the places form
   async function saveSignup(ev) {
+    console.log("does this get printing");
     const data = await axios.get('/profile');
     console.log("what is happening here" + data);
     if (data==null) {
