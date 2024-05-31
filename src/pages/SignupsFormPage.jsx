@@ -52,7 +52,7 @@ export default function SignupsFormPage() {
       canDrive, passengers, additionalInfo, committeePreferences,
     };
     await axios.post('/signups', {
-      conference, ...signupData
+      conferenceID, ...signupData
     });
     setRedirect(true);
     }
