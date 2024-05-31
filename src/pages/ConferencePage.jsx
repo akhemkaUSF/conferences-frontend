@@ -19,7 +19,6 @@ export default function ConferencePage() {
     axios.get(`/conferences/${id}`).then(response => {
       setConference(response.data);
     });
-    console.log(conference.name);
   }, [id]);
 
   if (!conference) return '';
