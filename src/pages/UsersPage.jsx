@@ -6,7 +6,7 @@ import BookingDates from "../BookingDates";
 import {UserContext} from "../UserContext";
 
 export default function SignupsPage() {
-    const {ready,user,setUser} = useContext(UserContext);
+  const {ready,user,setUser} = useContext(UserContext);
   const [users,setUsers] = useState([]);
   const [admin, setAdmin] = useState(false);
   const [redirect, setRedirect] = useState(false);
@@ -36,7 +36,6 @@ export default function SignupsPage() {
     if (!user.admin) {
         return <Navigate to={'/'}/>
     }
-    return;
   }
 
   return (
