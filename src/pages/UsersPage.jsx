@@ -65,7 +65,7 @@ export default function SignupsPage() {
                   </svg>
                 </div>
                 <div className="flex gap-1">
-                    <form onSubmit={saveAdmin(person=user)}>
+                    <form onSubmit={saveAdmin(user)}>
                         <div onChange={event => setAdmin("true"==event.target.value)}>
                             <input type="radio" value="true"/> Admin
                             <input type="radio" value="false"/> Not an Admin
