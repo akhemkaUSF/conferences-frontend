@@ -17,7 +17,7 @@ export default function SignupsPage() {
     });
   }, []);
 
-  async function saveAdmin(ev) {
+  async function saveAdmin(ev, person=null) {
     ev.preventDefault();
     await axios.put('/user', {
       admin
@@ -26,8 +26,9 @@ export default function SignupsPage() {
         alert("User is now an admin");
     }
     else {
-        alert("User is not an admin");
+        alert("User is now not an admin");
     }
+    console.log(person.name);
   }
 
   if (!ready) {
@@ -65,7 +66,7 @@ export default function SignupsPage() {
                   </svg>
                 </div>
                 <div className="flex gap-1">
-                    <form onSubmit={saveAdmin}>
+                    <form onSubmit={(e) => saveAdmin(e, user)}>
                         <div onChange={event => setAdmin("true"==event.target.value)}>
                             <input type="radio" value="true"/> Admin
                             <input type="radio" value="false"/> Not an Admin
