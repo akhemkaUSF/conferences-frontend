@@ -13,7 +13,9 @@ export default function ConferenceSignupsPage() {
     axios.get('/conference-signups/' + conferenceID).then(response => {
       setSignups(response.data);
     });
+    console.log("yup");
     for (const signup of signups) {
+      console.log("hello");
       console.log(signup.user.name);
     }
   }, [conferenceID]);
