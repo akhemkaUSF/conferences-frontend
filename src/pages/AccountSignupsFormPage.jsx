@@ -12,6 +12,7 @@ export default function AccountSignupsFormPage() {
   const [canDrive, setCanDrive] = useState(0);
   const [passengers, setPassengers] = useState(0);
   const [additionalInfo, setAdditionalInfo] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
     //don't do anything if the ID isn't there
