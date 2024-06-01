@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import ConferencesPage from "./pages/ConferencesPage";
 import ConferencesFormPage from "./pages/ConferencesFormPage";
 import SignupsFormPage from "./pages/SignupsFormPage.jsx";
+import AccountSignupsFormPage from "./pages/AccountSignupsFormPage.jsx";
 
 import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
