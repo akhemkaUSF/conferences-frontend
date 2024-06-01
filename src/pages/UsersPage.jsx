@@ -22,6 +22,12 @@ export default function SignupsPage() {
     await axios.put('/user', {
       admin
     });
+    if (admin) {
+        alert(user.name + " is now an admin");
+    }
+    else {
+        alert(user.name + " is not an admin");
+    }
   }
 
   if (!ready) {
