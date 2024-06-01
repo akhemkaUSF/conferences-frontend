@@ -29,7 +29,6 @@ export default function SignupsPage() {
         {users?.length > 0 && users.map(user => (
             //links to booking page using the id for the specific booking
             //${} is used to designate the parameter I guess
-          <Link to={`/account/signups/${user._id}`} className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden">
             <div className="py-3 pr-3 grow">
               <h2 className="text-xl">{user.name}</h2>
               <h2 className="text-xl">{user.email}</h2>
@@ -50,7 +49,6 @@ export default function SignupsPage() {
                 </div>
               </div>
             </div>
-          </Link>
         ))}
       </div>
     </div>
