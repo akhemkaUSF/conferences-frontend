@@ -1,11 +1,11 @@
-import AccountNav from "../AccountNav";
+import AdminNav from "../AdminNav";
 import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {Link, Navigate} from "react-router-dom";
 import BookingDates from "../BookingDates";
 import {UserContext} from "../UserContext";
 
-export default function SignupsPage() {
+export default function UsersPage() {
   const {ready,user,setUser} = useContext(UserContext);
   const [users,setUsers] = useState([]);
   const [admin, setAdmin] = useState(false);
@@ -51,7 +51,8 @@ export default function SignupsPage() {
 
   return (
         <div>
-        {/*puts the Account Navigation header at the top*/}
+        <AdminNav/>
+        {/*puts the Admin Navigation header at the top*/}
       <div>
         {/*as long as the length of the bookings array is greater than 0, do the following*/}
         {users?.length > 0 && users.map(user => (

@@ -32,7 +32,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/account" element={<ProfilePage />} />
-          <Route path="/account/conferences" element={<ConferencesPage />} />
+          <Route path="/admin/conferences" element={<ConferencesPage />} />
           <Route path="/account/conferences/new" element={<ConferencesFormPage />} />
           <Route path="/account/conferences/:id" element={<ConferencesFormPage />} />
           <Route path="/conference/:id" element={<ConferencePage />} />

@@ -1,5 +1,5 @@
 import {Link, useParams} from "react-router-dom";
-import AccountNav from "../AccountNav";
+import AdminNav from "../AdminNav";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import PlaceImg from "../PlaceImg";
@@ -14,7 +14,7 @@ export default function ConferencesPage() {
   }, []);
   return (
     <div>
-      <AccountNav />
+      <AdminNav />
         <div className="text-center">
           <Link className="inline-flex gap-1 bg-pink-600 text-white py-2 px-6 rounded-full" to={'/account/conferences/new'}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
