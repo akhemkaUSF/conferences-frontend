@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 import {UserContext} from "../UserContext.jsx";
 
 export default function AccountSignupsFormPage() {
-  const {conferenceID, id} = useParams();
+  const {id} = useParams();
   const [conference, setConference] = useState(null);
   const [committeePreferences, setCommitteePreferences] = useState('');
   const [canDrive, setCanDrive] = useState(0);
@@ -25,19 +25,9 @@ export default function AccountSignupsFormPage() {
        setCanDrive(data.canDrive);
        setPassengers(data.passengers);
        setAdditionalInfo(data.additionalInfo);
+       setConference(data.conference);
     });
   }, [id]);
-
-  useEffect(() => {
-    //don't do anything if the ID isn't there
-    if (!conferenceID) {
-      return;
-    }
-    //gets all the values for the place based on the axios request
-    axios.get('/conferences/'+conferenceID).then(response => {
-       setConference(response.data);
-    });
-  }, [conferenceID]);
 
   function inputHeader(text) {
     return (
@@ -62,7 +52,7 @@ export default function AccountSignupsFormPage() {
   async function saveSignup(ev) {
     ev.preventDefault();
     const signupData = {
-      canDrive, passengers, additionalInfo, committeePreferences,
+      canDrive, conference, passengers, additionalInfo, committeePreferences,
     };
     
     if (id) {
@@ -70,21 +60,24 @@ export default function AccountSignupsFormPage() {
       /*The ... spread operator in this code snippet is 
         used to merge the id property with all properties of the placeData object into a single object*/
     await axios.put('/signups', {
-        id, conference, ...signupData
+        id, ...signupData
       });
-      console.log(redirect);
       setRedirect(true);
-    } else {
-      // new place
-      await axios.post('/signups', conference, ...signupData);
-      setRedirect(true);
-    }
-
+    } 
   }
 
   //after the form is submitted, we go to our places page --> features the places we own
   if (redirect) {
     return <Navigate to={'/account/signups'} />
+  }
+
+  function canDriveResponse(boolobject=null) {
+    if (boolobject) {
+      return "true";
+    }
+    else {
+      return "false";
+    }
   }
 
   //
@@ -94,16 +87,9 @@ export default function AccountSignupsFormPage() {
       <form onSubmit={saveSignup}>
         {/*preInput goes before the form itself*/}
         {preInput('Select your committee preferences', '')}
-        <div onChange={event => setCommitteePreferences(event.target.value)}>
-        <input type="radio" value="GA" name="committeePreferences"/> General Assembly
-        <input type="radio" value="Specialized" name="committeePreferences"/> Specialized
-        <input type="radio" value="Crisis" name="committeePreferences"/> Specialized
-      </div>
-      {preInput('Can you drive to the conference?', '')}
-        <div onChange={event => setCanDrive("true"==event.target.value)}>
-        <input type="radio" value="true" name="committeePreferences"/> Yes
-        <input type="radio" value="false" name="committeePreferences"/> No
-      </div>
+        <input type="text" value={committeePreferences} onChange={ev => setCommitteePreferences(ev.target.value)}/>
+        {preInput('Can you drive to the conference?', 'Answer true or false. It is case sensitive so your response will default to false otherwise')}
+        <input type="text" value={canDriveResponse(canDrive)} onChange={ev => setCanDrive(ev.target.value=="true")} placeholder ="answer 'true' or 'false'"/>
         {preInput('If you selected yes, how many passengers can you bring?', '')}
         <input type="number" value={passengers} onChange={ev => setPassengers(ev.target.value)}/>
         {preInput('Anything else we should know?', 'Let us know any questions or concerns you may have!')}

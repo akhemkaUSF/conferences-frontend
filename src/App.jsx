@@ -34,7 +34,7 @@ function App() {
           <Route path="/account/conferences/:id" element={<ConferencesFormPage />} />
           <Route path="/conference/:id" element={<ConferencePage />} />
           <Route path="/account/signups" element={<SignupsPage />} />
-          <Route path="/account/signups/:id" element={<SignupPage />} />
+          <Route path="/account/signups/:id" element={<AccountSignupsFormPage />} />
           <Route path ="/account/newsignup/:conferenceID" element={<SignupsFormPage />} />
         </Route>
       </Routes>
