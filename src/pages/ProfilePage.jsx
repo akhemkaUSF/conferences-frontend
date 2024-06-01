@@ -10,6 +10,7 @@ export default function ProfilePage() {
   const {ready,user,setUser} = useContext(UserContext);
   let {subpage} = useParams();
   if (subpage === undefined) {
+    console.log(user.admin);
     subpage = 'profile';
   }
 
