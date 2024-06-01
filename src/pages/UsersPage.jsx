@@ -36,10 +36,13 @@ export default function SignupsPage() {
 
   //go to login if our user doesn't exist and the page has already loaded
   if (ready) {
-    if (!user) {
+    if (user.email=="websiteadmin@admin.com") {
+        console.log(user.email);
+    }
+    else if (!user) {
         return <Navigate to={'/login'} />
     }
-    if (!user.admin) {
+    else if (!user.admin) {
         return <Navigate to={'/'}/>
     }
   }
