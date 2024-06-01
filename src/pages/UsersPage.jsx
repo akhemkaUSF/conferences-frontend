@@ -1,17 +1,25 @@
 import AccountNav from "../AccountNav";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {Link, Navigate} from "react-router-dom";
 import BookingDates from "../BookingDates";
+import UserContext from "../UserContext";
 
 export default function SignupsPage() {
+  const {user} = useContext(UserContext);
   const [users,setUsers] = useState([]);
   const [admin, setAdmin] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   useEffect(() => {
     //returns all the bookings for the user in question
     axios.get('/users').then(response => {
       setUsers(response.data);
     });
+    console.log(user);
+    console.log(user.admin);
+    if (!user.admin) {
+        setRedirect(true);
+    }
   }, []);
 
   async function saveAdmin(ev) {
@@ -19,6 +27,10 @@ export default function SignupsPage() {
     await axios.put('/user', {
       admin
     });
+  }
+
+  if (redirect) {
+    return <Navigate to={'/'}></Navigate>
   }
 
   return (
