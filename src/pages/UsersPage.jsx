@@ -19,8 +19,9 @@ export default function SignupsPage() {
 
   async function saveAdmin(ev, person=null) {
     ev.preventDefault();
+    const userID = person._id;
     await axios.put('/user', {
-      admin
+      admin, userID
     });
     if (admin) {
         alert("User is now an admin");
