@@ -15,12 +15,15 @@ export default function SignupsPage() {
     axios.get('/users').then(response => {
       setUsers(response.data);
     });
+  }, []);
+
+  useEffect(() => {
     console.log(user);
     console.log(user.admin);
     if (!user.admin) {
         setRedirect(true);
     }
-  }, []);
+  }, [user]);
 
   async function saveAdmin(ev) {
     ev.preventDefault();
