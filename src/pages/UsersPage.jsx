@@ -6,7 +6,7 @@ import BookingDates from "../BookingDates";
 import {UserContext} from "../UserContext";
 
 export default function SignupsPage() {
-  const {user} = useContext(UserContext);
+    const {ready,user,setUser} = useContext(UserContext);
   const [users,setUsers] = useState([]);
   const [admin, setAdmin] = useState(false);
   const [redirect, setRedirect] = useState(false);
@@ -17,14 +17,6 @@ export default function SignupsPage() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(user);
-    console.log(user.admin);
-    if (!user.admin) {
-        setRedirect(true);
-    }
-  }, [user]);
-
   async function saveAdmin(ev) {
     ev.preventDefault();
     await axios.put('/user', {
@@ -32,12 +24,23 @@ export default function SignupsPage() {
     });
   }
 
-  if (redirect) {
-    return <Navigate to={'/'}></Navigate>
+  if (!ready) {
+    return 'Loading...';
+  }
+
+  //go to login if our user doesn't exist and the page has already loaded
+  if (ready) {
+    if (!user) {
+        return <Navigate to={'/login'} />
+    }
+    if (!user.admin) {
+        return <Navigate to={'/'}/>
+    }
+    return;
   }
 
   return (
-    <div>
+        <div>
         {/*puts the Account Navigation header at the top*/}
       <div>
         {/*as long as the length of the bookings array is greater than 0, do the following*/}
@@ -66,6 +69,6 @@ export default function SignupsPage() {
             </div>
         ))}
       </div>
-    </div>
+    </div> 
   );
 }
