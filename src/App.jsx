@@ -15,6 +15,7 @@ import AccountSignupsFormPage from "./pages/AccountSignupsFormPage.jsx";
 import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
+import ConferenceSignupsPage from './pages/ConferenceSignupsPage.jsx';
 
 axios.defaults.baseURL = "https://www.backend.usfmunon.top";
 axios.defaults.withCredentials = true;
@@ -37,6 +38,7 @@ function App() {
           <Route path="/account/signups" element={<SignupsPage />} />
           <Route path="/account/signups/:id" element={<AccountSignupsFormPage />} />
           <Route path ="/account/newsignup/:conferenceID" element={<SignupsFormPage />} />
+          <Route path ="/conference-signups/:conferenceID" element={<ConferenceSignupsPage />} />
         </Route>
       </Routes>
     </UserContextProvider>
