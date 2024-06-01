@@ -32,7 +32,7 @@ export default function ConferencesPage() {
               </div>
               <div> 
                 <Link to ={'/conference-signups/' + conference._id} className="flex cursor-pointer gap-4 bg-gray-100 p-4 rounded-2xl">
-                  <h2 className="text-xl">{Signups}</h2>
+                  <h2 className="text-xl">{"Signups"}</h2>
                 </Link>
               </div>
             </Link>
