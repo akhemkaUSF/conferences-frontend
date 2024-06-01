@@ -7,6 +7,7 @@ export default function RegisterPage() {
     const [name, setName] = useState('');
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [admin] = useState(false);
 
 
     //triggered when we press the register button
@@ -19,6 +20,7 @@ export default function RegisterPage() {
               name, 
               email, 
               password,
+              admin,
           });
           alert('registration complete');
         } 
