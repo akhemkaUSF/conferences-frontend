@@ -3,7 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {Link, Navigate} from "react-router-dom";
 import BookingDates from "../BookingDates";
-import UserContext from "../UserContext";
+import {UserContext} from "../UserContext";
 
 export default function SignupsPage() {
   const {user} = useContext(UserContext);
