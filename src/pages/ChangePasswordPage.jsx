@@ -2,7 +2,7 @@ import {Link, Navigate} from 'react-router-dom';
 import {useContext, useState, useEffect} from "react";
 import axios from "axios";
 
-export default function ResetPasswordPage() {
+export default function ChangePasswordPage() {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
