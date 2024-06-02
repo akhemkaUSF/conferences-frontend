@@ -12,7 +12,7 @@ export default function ResetPasswordPage() {
       //retrieves the user data that comes after logging in, using the email and password
       const response = await axios.post('/reset', {email});
       console.log(response);
-      alert('Check your email for the link to reset your password');
+      alert(response.data);
       setRedirect(true);
     } 
     //if we run into any sort of error, nothing happens and we give an alert that the login has failed
