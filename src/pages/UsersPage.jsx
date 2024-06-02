@@ -52,7 +52,7 @@ export default function UsersPage() {
   async function deleteUser(userID=null, e) {
     e.preventDefault();
     if (userID!=user._id) {
-        const {response} = axios.delete('/user/' + userID);
+        const {response} = axios.delete(`/user/${userID}`);
         if (response!="ok") {
             alert("You must first delete all signups corresponding with this user");
         }
