@@ -22,6 +22,12 @@ export default function SignupsPage() {
     //console.log(conference.name);
     //return conference.name;
   }
+
+  async function deleteSignup(signupID=null) {
+    axios.delete('/signups/' + signupID);
+    alert('Signup has been deleted. Refresh to see the change');
+  }
+  
   return (
     <div>
         {/*puts the Account Navigation header at the top*/}
@@ -46,6 +52,9 @@ export default function SignupsPage() {
                       <div>Transportation Fee: ${signup.conference.transportationCost}</div>
                     )}
                   </span>
+                  <div>
+                  <button className="primary my-4" onClick={deleteSignup(signup._id)}>Delete Signup</button>
+                  </div>
                 </div>
               </div>
             </div>
