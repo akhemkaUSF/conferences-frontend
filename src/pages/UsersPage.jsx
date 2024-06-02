@@ -91,9 +91,9 @@ export default function UsersPage() {
                         </div>
                         <button className="primary my-4">Save</button>
                     </form>
-                    <div>
+                </div>
+                <div>
                     <button className="primary my-4" onClick={(e) => deleteUser(user._id, e)}>Delete User</button>
-                  </div>
                 </div>
               </div>
             </div>
