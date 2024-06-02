@@ -6,6 +6,7 @@ export default function RegisterPage() {
   //all the variables start out blank
     const [name, setName] = useState('');
     const[email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [admin] = useState(false);
 
@@ -16,19 +17,19 @@ export default function RegisterPage() {
         ev.preventDefault();
         console.log(axios.get('/test'));
         try {
-          await axios.post('/register', {
+          const response = await axios.post('/register', {
               name, 
               email, 
+              phoneNumber,
               password,
               admin,
           });
-          alert('registration complete');
+          alert(response.data);
         } 
       catch(error) {
             console.log(error.config);
-            alert('registration failed');
+            alert('Registration Failed. Please make sure all fields have been filled out');
         };
-        
     }
     return (
         <div className="mt-4 grow flex items-center justify-around">
@@ -43,6 +44,10 @@ export default function RegisterPage() {
                    placeholder="your@email.com"
                    value={email}
                    onChange={ev => setEmail(ev.target.value)} />
+            <input type="text"
+                   placeholder="111-111-1111"
+                   value={phoneNumber}
+                   onChange={ev => setPhoneNumber(ev.target.value)} />
             <input type="password"
                    placeholder="password"
                    value={password}
