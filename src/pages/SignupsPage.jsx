@@ -54,7 +54,7 @@ export default function SignupsPage() {
                     )}
                   </span>
                   <div>
-                  <button className="primary my-4" onClick={(e) => deletesSignup(signup._id, e)}>Delete Signup</button>
+                  <button className="primary my-4" onClick={(e) => deleteSignup(signup._id, e)}>Delete Signup</button>
                   </div>
                 </div>
               </div>
