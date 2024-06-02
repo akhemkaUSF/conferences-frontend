@@ -49,6 +49,22 @@ export default function UsersPage() {
     }
   }
 
+  async function deleteUser(userID=null, e) {
+    e.preventDefault();
+    if (userID!=user._id) {
+        const {response} = axios.delete('/user/' + userID);
+        if (response!="ok") {
+            alert("You must first delete all signups corresponding with this user")''
+        }
+        else {
+            alert('User has been deleted. Refresh to see the change');   
+        }
+    }
+    else {
+        alert('You cannot delete your own account. Request another admin to make the change');
+    }
+  }
+
   return (
         <div>
         <AdminNav/>
@@ -75,6 +91,9 @@ export default function UsersPage() {
                         </div>
                         <button className="primary my-4">Save</button>
                     </form>
+                    <div>
+                    <button className="primary my-4" onClick={(e) => deleteUser(user._id, e)}>Delete User</button>
+                  </div>
                 </div>
               </div>
             </div>
