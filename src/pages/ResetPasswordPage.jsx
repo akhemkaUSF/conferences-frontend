@@ -10,7 +10,8 @@ export default function ResetPasswordPage() {
     ev.preventDefault();
     try {
       //retrieves the user data that comes after logging in, using the email and password
-      await axios.post('/reset', {email});
+      const response = await axios.post('/reset', {email});
+      console.log(response);
       alert('Check your email for the link to reset your password');
       setRedirect(true);
     } 
