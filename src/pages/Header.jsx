@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import {useContext} from "react";
 import {UserContext} from "../UserContext.jsx";
+import "../App.css"
 
 export default function Header() {
   //UserContext function helps us determine whether user is logged in
