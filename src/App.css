@@ -40,3 +40,48 @@
 .read-the-docs {
   color: #888;
 }
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+  background-color: #347C2C; /* Green */
+  color: #FFD700; /* Gold */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+}
+
+.header-nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.header-nav ul li {
+  margin-right: 20px;
+}
+
+.header-nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.header-nav ul li a:hover {
+  color: #FFFFFF; /* White */
+}
