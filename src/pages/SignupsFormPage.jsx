@@ -88,6 +88,13 @@ export default function SignupsFormPage() {
         <input type="number" value={passengers} onChange={ev => setPassengers(ev.target.value)}/>
         {preInput('Anything else we should know?', 'Let us know any questions or concerns you may have!')}
         <input type="text" value={additionalInfo} onChange={ev => setAdditionalInfo(ev.target.value)} placeholder="Questions, concerns, or otherwise go here!"/>
+        {preInput('Anything else we should know?', 'Let us know any questions or concerns you may have!')}
+        <div class="date-input">
+            <input type="text" placeholder="DD"/>
+            <input type="text" placeholder="MM"/>
+            <input type="text" placeholder="YYYY"/>
+        </div>
+
         <button className="primary my-4">Save</button>
       </form>
     </div>

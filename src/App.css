@@ -85,3 +85,17 @@ body {
 .header-nav ul li a:hover {
   color: #FFFFFF; /* White */
 }
+
+.date-input {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+  gap: 5px; /* Gap between columns */
+}
+
+.date-input input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
