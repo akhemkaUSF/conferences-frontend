@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "yarn run dev"
+    "start": "yarn run dev",
+    "test": "react-scripts test a q"
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -16,7 +17,8 @@
     "jsonwebtoken": "^9.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
