@@ -6,6 +6,7 @@ import Image from "./Image.jsx";
 export default function PhotosUploader({addedPhotos,onChange}) {
   const [photoLink,setPhotoLink] = useState('');
   async function addPhotoByLink(ev) {
+    console.log("trigger test change")
     ev.preventDefault();
     const {data:filename} = await axios.post('/upload-by-link', {link: photoLink});
     onChange(prev => {
