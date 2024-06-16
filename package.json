@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": "yarn run dev",
-    "tests": "react-scripts test"
+    "test": "react-scripts test"
   },
   "dependencies": {
     "axios": "^1.6.8",
