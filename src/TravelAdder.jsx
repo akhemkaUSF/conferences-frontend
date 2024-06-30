@@ -12,6 +12,7 @@ export default function TravelAdder({id, conferenceID}) {
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
     const [departureTime, setDepartureTime] = useState(new Date());
+    const [dateComparator, setDateComparator] = useState(departureTime);
     const [saved, setSaved] = useState(true);
   useEffect(() => {
     //don't do anything if the ID isn't there
@@ -26,8 +27,6 @@ export default function TravelAdder({id, conferenceID}) {
        setTravelType(data.travelType);
        setOrigin(data.origin);
        setDestination(data.destination);
-       setDepartureTime(data.departureTime);
-       console.log("full year function test", departureTime.getFullYear());
     });
   }, [id]);
   function inputHeader(text) {
@@ -52,6 +51,10 @@ export default function TravelAdder({id, conferenceID}) {
   const handleInputChange = (ev, setType) => {
     setType(ev.target.value);
     setSaved(false);
+  }
+
+  const handleDateChange = (date) => {
+    setDepartureTime(date);
   }
 
   //activated when we submit the places form
@@ -96,7 +99,8 @@ export default function TravelAdder({id, conferenceID}) {
         <input type="text" value={destination} onChange={ev => handleInputChange(ev, setDestination)} placeholder="USF Magnolia Drive, Tampa, FL 33620"/>
         <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
-            <DatePicker selected={departureTime} showTimeSelect />
+            {preInput('Current departure time: ' + departureTime, 'Departure Time value will only be affected if you change the current value in the date picker')}
+            <DatePicker selected={dateComparator} onChange={(date) => handleDateChange(date)} showTimeSelect />
         </div>
         {(!saved) && 
         <button className="primary my-4">Save</button>
