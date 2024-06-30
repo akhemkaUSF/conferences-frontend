@@ -50,6 +50,7 @@ export default function TravelAdder({id, conferenceID}) {
 
   const handleInputChange = (ev, setType) => {
     console.log(setType);
+    console.log(setType==setTravelType);
     setType(ev.targetValue);
     setSaved(false);
   }
