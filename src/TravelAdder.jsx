@@ -58,20 +58,14 @@ export default function TravelAdder({id, conferenceID}) {
 
   const handleDateChange = (date) => {
     setDateComparator(date);
+    setTempDeparture(dateComparator);
+    setDeparatureTime(tempDeparture);
     setSaved(false);
   }
 
   //activated when we submit the places form
   async function saveTravel(ev) {
     ev.preventDefault();
-    console.log("wait does the save travel function get called");
-    console.log("date comaprator", dateComparator);
-    setTempDeparture(dateComparator);
-    console.log("temp Departure", tempDeparture);
-    console.log("departure Time", departureTime);
-    if (tempDeparture!=departureTime) {
-      console.log("do we get here??");
-      setDepartureTime(tempDeparture);}
     const travelData = {
       conferenceID, travelType, origin, destination, departureTime
     };
