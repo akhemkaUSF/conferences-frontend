@@ -88,6 +88,10 @@ export default function TravelAdder({id, conferenceID}) {
     setSaved(true);
   }
 
+  async function deleteButton() {
+    await axios.delete('travels/' + id);
+  }
+
   //after the form is submitted, we go to our places page --> features the places we own
 
   //
@@ -105,12 +109,13 @@ export default function TravelAdder({id, conferenceID}) {
         <input type="text" value={destination} onChange={ev => handleInputChange(ev, setDestination)} placeholder="USF Magnolia Drive, Tampa, FL 33620"/>
         <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
-            {preInput('Current departure time: ' + tempDeparture, 'Departure Time value will only be affected if you change the current value in the date picker')}
+            {preInput('Current departure time: ' + tempDeparture, 'Departure Time value will only be affected if you change the current value in the date picker and hit save')}
             <DatePicker selected={dateComparator} onChange={(date) => handleDateChange(date)} showTimeSelect />
         </div>
         {(!saved) && 
         <button className="primary my-4">Save</button>
         }
+        <button className="pimrary my-4" onClick={ev => deleteButton}>Delete</button>
       </form>
     </div>
   );
