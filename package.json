@@ -15,8 +15,10 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
+    "docker": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
     "react": "^18.2.0",
+    "react-datepicker": "^7.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "react-scripts": "^5.0.1"
