@@ -12,8 +12,8 @@ export default function TravelAdder({id, conferenceID}) {
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
     const [departureTime, setDepartureTime] = useState(new Date());
-    const [tempDeparture, setTempDeparture] = useState(departureTime);
-    const [dateComparator, setDateComparator] = useState(departureTime);
+    const [tempDeparture, setTempDeparture] = useState(new Date());
+    const [dateComparator, setDateComparator] = useState(new Date());
     const [saved, setSaved] = useState(true);
   useEffect(() => {
     //don't do anything if the ID isn't there
@@ -58,8 +58,8 @@ export default function TravelAdder({id, conferenceID}) {
 
   const handleDateChange = (date) => {
     setDateComparator(date);
-    setTempDeparture(dateComparator);
-    setDepartureTime(tempDeparture);
+    setTempDeparture(date);
+    setDepartureTime(date);
     setSaved(false);
   }
 
