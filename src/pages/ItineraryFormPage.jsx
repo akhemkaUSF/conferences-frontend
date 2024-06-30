@@ -5,7 +5,7 @@ import TravelAdder from "../TravelAdder.jsx";
 import AdminNav from "../AdminNav.jsx";
 
 export default function ItineraryFormPage() {
-    const {conferenceId} = useParams();
+    const {conferenceID} = useParams();
     console.log("console.log test of conferenceID")
     console.log(conferenceId);
     const [travels, setTravels] = useState([]);
@@ -20,7 +20,7 @@ export default function ItineraryFormPage() {
     <div>
     <AdminNav/>
   <div>
-    <TravelAdder id={null} conferenceID={conferenceId}/>
+    <TravelAdder id={null} conferenceID={conferenceID}/>
     {travels?.length > 0 && travels.map(travel => (
         <div className="py-3 pr-3 grow">
             <TravelAdder id={travel._id} conferenceID={conferenceId}/>
