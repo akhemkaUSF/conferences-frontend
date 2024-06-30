@@ -63,6 +63,7 @@ export default function TravelAdder({id, conferenceID}) {
 
   //activated when we submit the places form
   async function saveTravel(ev) {
+    console.log("wait does the save travel function get called");
     setTempDeparture(dateComparator);
     console.log("temp Departure", tempDeparture);
     console.log("departure Time", departureTime);
