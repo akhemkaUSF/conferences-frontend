@@ -93,6 +93,7 @@ export default function TravelAdder({id, conferenceID}) {
   async function deleteButton(ev) {
     ev.preventDefault();
     const response = await axios.delete('/travels/' + id);
+    console.log("delete button response", response);
   }
 
   //after the form is submitted, we go to our places page --> features the places we own
