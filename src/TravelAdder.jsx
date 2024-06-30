@@ -90,8 +90,9 @@ export default function TravelAdder({id, conferenceID}) {
     setSaved(true);
   }
 
-  async function deleteButton() {
-    await axios.delete('/travels/' + id);
+  async function deleteButton(ev) {
+    ev.preventDefault();
+    const response = await axios.delete('/travels/' + id);
   }
 
   //after the form is submitted, we go to our places page --> features the places we own
@@ -119,7 +120,7 @@ export default function TravelAdder({id, conferenceID}) {
         }
         </form>
         {(id) &&
-        <button className="primary my-4" onClick={ev => deleteButton}>Delete</button>
+        <button className="primary my-4" onClick={(ev) => deleteButton(ev)}>Delete</button>
         }
     </div>
   );
