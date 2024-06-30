@@ -6,6 +6,7 @@ import AdminNav from "../AdminNav.jsx";
 
 export default function ItineraryFormPage() {
     const {conferenceId} = useParams();
+    console.log("console.log test of conferenceID")
     console.log(conferenceId);
     const [travels, setTravels] = useState([]);
   useEffect(() => {
