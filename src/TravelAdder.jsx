@@ -27,7 +27,7 @@ export default function TravelAdder({id, conferenceID}) {
        setOrigin(data.origin);
        setDestination(data.destination);
        setDepartureTime(data.departureTime);
-       console.log(departureTime);
+       console.log("full year function test", departureTime.getFullYear());
     });
   }, [id]);
   function inputHeader(text) {
