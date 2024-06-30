@@ -7,7 +7,7 @@ import {UserContext} from "./UserContext.jsx";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function TravelAdder(id=null, conferenceID) {
+export default function TravelAdder({id, conferenceID}) {
     const [travelType, setTravelType] = useState('');
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
