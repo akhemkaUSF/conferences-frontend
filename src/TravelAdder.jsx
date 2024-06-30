@@ -4,6 +4,8 @@ import AccountNav from "./AccountNav.jsx";
 import {Navigate, useParams} from "react-router-dom";
 import { format } from 'date-fns'
 import {UserContext} from "./UserContext.jsx";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function TravelAdder(id=null, conferenceID) {
     const [travelType, setTravelType] = useState('');
