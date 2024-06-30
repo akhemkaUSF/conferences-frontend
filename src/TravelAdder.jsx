@@ -65,6 +65,7 @@ export default function TravelAdder({id, conferenceID}) {
       /*The ... spread operator in this code snippet is 
         used to merge the id property with all properties of the placeData object into a single object*/
         console.log("gets called here");
+        console.log(travelData);
         await axios.put('/travels', {
         id, ...travelData
       });
