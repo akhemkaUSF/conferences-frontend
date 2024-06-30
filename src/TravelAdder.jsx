@@ -91,7 +91,7 @@ export default function TravelAdder({id, conferenceID}) {
   }
 
   async function deleteButton() {
-    await axios.delete('travels/' + id);
+    await axios.delete('/travels/' + id);
   }
 
   //after the form is submitted, we go to our places page --> features the places we own
