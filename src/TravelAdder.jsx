@@ -117,10 +117,10 @@ export default function TravelAdder({id, conferenceID}) {
         {(!saved) && 
         <button className="primary my-4">Save</button>
         }
-        {(id) &&
-        <button className="pimrary my-4" onClick={ev => deleteButton}>Delete</button>
-        }
         </form>
+        {(id) &&
+        <button className="primary my-4" onClick={ev => deleteButton}>Delete</button>
+        }
     </div>
   );
 }
