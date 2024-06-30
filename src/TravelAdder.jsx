@@ -59,7 +59,7 @@ export default function TravelAdder({id, conferenceID}) {
   const handleDateChange = (date) => {
     setDateComparator(date);
     setTempDeparture(dateComparator);
-    setDeparatureTime(tempDeparture);
+    setDepartureTime(tempDeparture);
     setSaved(false);
   }
 
