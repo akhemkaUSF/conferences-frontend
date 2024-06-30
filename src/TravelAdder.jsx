@@ -64,11 +64,13 @@ export default function TravelAdder({id, conferenceID}) {
       // update
       /*The ... spread operator in this code snippet is 
         used to merge the id property with all properties of the placeData object into a single object*/
+        console.log("gets called here");
         await axios.put('/travels', {
         id, ...travelData
       });
     } else {
       // new place
+      console.log("gets called at POST");
       await axios.post('/travels', travelData);
     }
     setSaved(true);
