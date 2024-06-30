@@ -28,6 +28,8 @@ export default function TravelAdder({id, conferenceID}) {
        setTravelType(data.travelType);
        setOrigin(data.origin);
        setDestination(data.destination);
+       setTempDeparture(data.departureTime);
+       setDepartureTime(data.departureTime);
     });
   }, [id]);
   function inputHeader(text) {
@@ -62,7 +64,8 @@ export default function TravelAdder({id, conferenceID}) {
   //activated when we submit the places form
   async function saveTravel(ev) {
     setTempDeparture(dateComparator);
-    setDepartureTime(dateComparator);
+    if (tempDeparture!=departureTime) {
+      setDepartureTime(tempDeparture);}
     ev.preventDefault();
     const travelData = {
       conferenceID, travelType, origin, destination, departureTime
