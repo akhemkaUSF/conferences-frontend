@@ -96,7 +96,7 @@ export default function TravelAdder({id, conferenceID}) {
         <input type="text" value={destination} onChange={ev => handleInputChange(ev, setDestination)} placeholder="USF Magnolia Drive, Tampa, FL 33620"/>
         <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
-            <DatePicker selected={departureTime} onChange={(date) => console.log(date)} showTimeSelect />
+            <DatePicker selected={departureTime} onChange={console.log("date picker test", ev, ev.target.value)} showTimeSelect />
         </div>
         {(!saved) && 
         <button className="primary my-4">Save</button>
