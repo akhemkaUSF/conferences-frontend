@@ -35,6 +35,11 @@ export default function ConferencesPage() {
                   <h2 className="text-xl">{"Signups"}</h2>
                 </Link>
               </div>
+              <div> 
+                <Link to ={'/itinerary/' + conference._id} className="flex cursor-pointer gap-4 bg-gray-100 p-4 rounded-2xl">
+                  <h2 className="text-xl">{"Create Itinerary"}</h2>
+                </Link>
+              </div>
             </Link>
           ))}
         </div>

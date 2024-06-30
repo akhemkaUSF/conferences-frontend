@@ -12,6 +12,7 @@ import ConferencesFormPage from "./pages/ConferencesFormPage";
 import SignupsFormPage from "./pages/SignupsFormPage.jsx";
 import AccountSignupsFormPage from "./pages/AccountSignupsFormPage.jsx";
 import UsersPage from "./pages/UsersPage.jsx";
+import ItineraryFormPage from "./pages/ItineraryFormPage.jsx";
 
 import ConferencePage from "./pages/ConferencePage";
 import SignupsPage from "./pages/SignupsPage.jsx";
@@ -46,6 +47,7 @@ function App() {
           <Route path = "/admin/users" element={<UsersPage />} />
           <Route path = "/reset" element={<ResetPasswordPage/>} />
           <Route path = "/account/change" element={<ChangePasswordPage />} />
+          <Route path = "/itinerary/:conferenceID" element={<ItineraryFormPage />} />
         </Route>
       </Routes>
     </UserContextProvider>

@@ -7,7 +7,6 @@ import {UserContext} from "../UserContext.jsx";
 
 export default function SignupsFormPage() {
   const {conferenceID} = useParams();
-  const [conference, setConference] = useState(null);
   const [committeePreferences, setCommitteePreferences] = useState('');
   const [canDrive, setCanDrive] = useState(0);
   const [passengers, setPassengers] = useState(0);
@@ -15,17 +14,6 @@ export default function SignupsFormPage() {
   const [redirect, setRedirect] = useState(false);
   const {user} = useContext(UserContext);
 
-  useEffect(() => {
-    //don't do anything if the ID isn't there
-    console.log("is this triggered at all?");
-    if (!conferenceID) {
-      return;
-    }
-    //gets all the values for the place based on the axios request
-    axios.get('/conferences/'+conferenceID).then(response => {
-       setConference(response.data);
-    });
-  }, [conferenceID]);
 
   function inputHeader(text) {
     return (
