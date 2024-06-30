@@ -2,6 +2,7 @@ import {useEffect, useState, useContext} from "react";
 import axios from "axios";
 import {Navigate, useParams} from "react-router-dom";
 import TravelAdder from "../TravelAdder.jsx";
+import AdminNav from "../AdminNav.jsx";
 
 export default function ItineraryFormPage() {
     const {conferenceId} = useParams();
