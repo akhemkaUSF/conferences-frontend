@@ -25,7 +25,9 @@ export default function TravelAdder({id, conferenceID}) {
     //gets all the values for the place based on the axios request
     axios.get('/travels/'+id).then(response => {
        const {data} = response;
-       setTravelType(data.travelType);
+       if (travelType) {
+        setTravelType(data.travelType);
+       }
        setOrigin(data.origin);
        setDestination(data.destination);
        setTempDeparture(data.departureTime);
