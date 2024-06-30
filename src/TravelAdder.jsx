@@ -93,6 +93,7 @@ export default function TravelAdder({id, conferenceID}) {
   async function deleteButton(ev) {
     ev.preventDefault();
     const response = await axios.delete('/travels/' + id);
+    alert('This travel has been deleted. Reload to see your changes reflected');
     console.log("delete button response", response);
   }
 
