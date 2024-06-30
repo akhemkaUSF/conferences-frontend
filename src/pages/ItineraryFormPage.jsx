@@ -23,7 +23,7 @@ export default function ItineraryFormPage() {
     <TravelAdder id={null} conferenceID={conferenceID}/>
     {travels?.length > 0 && travels.map(travel => (
         <div className="py-3 pr-3 grow">
-            <TravelAdder id={travel._id} conferenceID={conferenceId}/>
+            <TravelAdder id={travel._id} conferenceID={conferenceID}/>
         </div>
     ))}
   </div>
