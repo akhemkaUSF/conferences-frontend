@@ -1,15 +1,17 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import AccountNav from "../AccountNav.jsx";
 import {Navigate, useParams} from "react-router-dom";
 import { format } from 'date-fns'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function ConferencesFormPage() {
   const {id} = useParams();
   const [name,setName] = useState('');
   const [city,setCity] = useState('');
-  const [startDate,setStartDate] = useState('');
-  const [endDate,setEndDate] = useState('');
+  const [startDate,setStartDate] = useState(new Date());
+  const [endDate,setEndDate] = useState(new Date());
   const [delegateFee,setDelegateFee] = useState(0);
   const [delegationFee, setDelegationFee] = useState(0);
   const [hotelCost, setHotelCost] = useState(0);
@@ -106,17 +108,11 @@ export default function ConferencesFormPage() {
         <div className="grid gap-2 grid-cols-2 md:grid-cols-2">
           <div>
             <h3 className="mt-2 -mb-1">Start Date</h3>
-            <input type="text"
-                   value={startDate}
-                   onChange={ev => setStartDate(ev.target.value)}
-            />
+            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
           </div>
           <div>
             <h3 className="mt-2 -mb-1">End date</h3>
-            <input type="text"
-                   value={endDate}
-                   onChange={ev => setEndDate(ev.target.value)}
-            />
+            <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
           </div>
         </div>
         {preInput('Input the expected costs')}
