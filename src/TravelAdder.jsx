@@ -15,7 +15,9 @@ export default function TravelAdder(id=null, conferenceID) {
     const [saved, setSaved] = useState(true);
   useEffect(() => {
     //don't do anything if the ID isn't there
+    console.log(id);
     if (!id) {
+      console.log("do we get here");
       return;
     }
     //gets all the values for the place based on the axios request
