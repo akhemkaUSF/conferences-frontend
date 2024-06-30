@@ -7,7 +7,7 @@ import AdminNav from "../AdminNav.jsx";
 export default function ItineraryFormPage() {
     const {conferenceID} = useParams();
     console.log("console.log test of conferenceID")
-    console.log(conferenceId);
+    console.log(conferenceID);
     const [travels, setTravels] = useState([]);
   useEffect(() => {
     axios.get('/travels/').then(response => {
