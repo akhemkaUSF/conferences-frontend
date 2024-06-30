@@ -72,6 +72,7 @@ export default function TravelAdder({id, conferenceID}) {
     } else {
       // new place
       console.log("gets called at POST");
+      console.log(travelData);
       await axios.post('/travels', travelData);
     }
     setSaved(true);
